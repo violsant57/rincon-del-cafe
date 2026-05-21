@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Rincón del Café</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: #f4efe9;
+        color: #3b2a21;
+        text-align: center;
+    }
+
+    header {
+        padding: 30px 20px;
+    }
+
+    .logo {
+        width: 260px;
+        max-width: 90%;
+    }
+
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5em;
+        margin: 10px 0;
+    }
+
+    .subtitulo {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+
+    .contenedor {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .card {
+        background: white;
+        padding: 20px;
+        width: 260px;
+        border-radius: 15px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    h3 {
+        margin-bottom: 10px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        margin: 8px 0;
+    }
+
+    .productos li::before {
+        content: "• ";
+        color: #8b5e3c;
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 15px;
+        background-color: #6b4226;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+    }
+
+    footer {
+        margin-top: 30px;
+        padding: 15px;
+        font-size: 0.9em;
+    }
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <!-- LOGO -->
+    <img src="atlogo.jpeg" alt="El Rincón del Café" class="logo">
+
+    <h1>El Rincón del Café</h1>
+    <p class="subtitulo">Venta de cafés y postres</p>
+</header>
+
+<section class="contenedor">
+
+    <!-- PEDIDOS -->
+    <div class="card">
+        <h3>📞 Pedidos</h3>
+        <p>2831008070</p>
+        <a class="btn" href="https://wa.me/522831008070" target="_blank">
+            Pedir por WhatsApp
+        </a>
+    </div>
+
+    <!-- UBICACIÓN -->
+    <div class="card">
+        <h3>📍 Punto de venta</h3>
+        <p>Las Sabanetas</p>
+        <p>Calle:emiliano zapata</p>
+<a href="https://www.google.com/maps?q=Las+Sabanetas+emilianozapata" target="_blank">
+  Ver ubicación en Google Maps
+</a>
+    </div>
+
+    <!-- PRODUCTOS -->
+
+<div class="card">
+  <h3>☕ Productos</h3>
+  <ul>
+    <li onclick="verProducto('americano')">Café americano</li>
+    <li onclick="verProducto('leche')">Café con leche</li>
+    <li onclick="verProducto('capuchino')">Capuchino</li>
+    <li onclick="verProducto('pastel')">Pastel</li>
+    <li onclick="verProducto('galletas')">Galletas</li>
+  </ul>
+</div>
+
+<!-- Visor -->
+<div id="detalle">
+  <h3 id="nombre"></h3>
+  <img id="imagen" width="250">
+  <p id="ingredientes"></p>
+</div>
+
+<script>
+function verProducto(tipo) {
+
+  let datos = {
+    americano: {
+      nombre: " cafe americano",
+      imagen: "americano.jpeg",
+      ingredientes: "Café + agua caliente"
+    },
+    leche: {
+      nombre: "cafe con leche",
+      imagen: "cafel.jpeg",
+      ingredientes: "Café + leche"
+    },
+    capuchino: {
+      nombre: "Capuchino",
+      imagen: "capuchino.jpeg",
+      ingredientes: "Café + leche espumosa + cacao"
+    },
+    pastel: {
+      nombre: "Pastel",
+      imagen: "paste.jpeg",
+      ingredientes: "Harina, azúcar, huevo, mantequilla"
+    },
+    galletas: {
+      nombre: "Galletas",
+      imagen: "galle.jpeg",
+      ingredientes: "Harina, azúcar, mantequilla"
+    }
+  };
+
+  document.getElementById("nombre").innerText = datos[tipo].nombre;
+  document.getElementById("imagen").src = datos[tipo].imagen;
+  document.getElementById("ingredientes").innerText = "Ingredientes: " + datos[tipo].ingredientes;
+}
+</script>
+
+<style>
+.card {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 10px;
+  width: 250px;
+}
+
+li {
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+#detalle {
+  margin-top: 20px;
+}
+</style>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 El Rincón del Café
+</footer>
+
+</body>
+</html>
+<img src="2do.jpeg" alt="El Rincón del Café" class="logo">
